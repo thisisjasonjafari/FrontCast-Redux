@@ -8,16 +8,24 @@ class App extends Component {
     this.increment = this.increment.bind(this)
     this.decrement = this.decrement.bind(this)
     this.state = {
-      count: 2
+      count: 0
     }
 
   }
 
   increment() {
-    console.log('Increment');
+    this.setState((prevState) => {
+      return {
+        count: prevState.count + 1
+      }
+    })
   }
   decrement() {
-    console.log('Decrement');
+    this.setState((prevState) => {
+      return {
+        count: prevState.count - 1
+      }
+    })
   }
   render() {
     return (
